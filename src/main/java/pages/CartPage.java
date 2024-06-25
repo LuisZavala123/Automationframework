@@ -11,30 +11,28 @@ import utils.Constants;
 
 import java.time.Duration;
 
-public class HomePage {
+public class CartPage {
     private WebDriver driver;
 
-    public HomePage(){
+    public CartPage(){
         driver = DriverSingleton.getDriver();
         PageFactory.initElements(driver,this);
     }
 
-    @FindBy(css = "#menu-item-2330 > a")
-    WebElement loginButton;
+    @FindBy(css = "#post-206 > content > div > div.woocommerce > div.cart-collaterals > div > div > a")
+    private WebElement proceedToCheckoutButton;
 
-    @FindBy(css = "#menu-item-1310 > a")
-    WebElement shopButton;
+    @FindBy(id = "coupon_code")
+    private WebElement couponCodeInput;
 
-    @FindBy(css = "#menu-item-2333 > a")
-    WebElement username;
+    @FindBy(css = "#post-206 > content > div > div.woocommerce > form > table > tbody > tr:nth-child(2) > td > div > button")
+    private WebElement applyCouponButton;
 
-    public void clickLogIn(){
+    public void proceedToCheckout(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Constants.TIMEOUT));
-        wait.until(ExpectedConditions.elementToBeClickable(loginButton));
-        loginButton.click();
+        wait.until(ExpectedConditions.elementToBeClickable(proceedToCheckoutButton));
+        proceedToCheckoutButton.click();
+
     }
 
-    public String getUsername(){
-        return username.getText();
-    }
 }
