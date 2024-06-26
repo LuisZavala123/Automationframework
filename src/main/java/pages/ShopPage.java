@@ -29,6 +29,9 @@ public class ShopPage {
     @FindBy(css = "body > nav > div.wb4wp-wrapper > div.wb4wp-right > div > a")
     private WebElement cartButton;
 
+    @FindBy(css = "#post-206 > content > div > div.woocommerce > div.cart-collaterals > div > div > a")
+    private WebElement checkoutButton;
+
 
     public void addElementToCart(){
         String previousNumbrer = numberOfProducts.getText();
