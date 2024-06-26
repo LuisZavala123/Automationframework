@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utils.Utils;
 
 public class SingnInPage {
     private WebDriver driver;
@@ -25,7 +26,7 @@ public class SingnInPage {
 
     public void login(String email, String password){
         signInEmail.sendKeys(email);
-        signInPassword.sendKeys(password);
+        signInPassword.sendKeys(Utils.decode64(password));
         signInButton.click();
     }
 }
