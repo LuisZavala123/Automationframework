@@ -8,7 +8,12 @@ public class Constants {
     public static final String PHANTOMJS="PhantomJs";
     public static final String FIREFOX="Firefox";
     public static final int TIMEOUT=15;
+    public static final int SCREENSHOT_NAME_LENGHT=15;
     public static final String EMAIL="email";
     public static final String PASSWORD="password";
     public static final String USERNAME="username";
+    public static final String ALPHABET="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    public static final String SCREENSHOT_FOLDER="Screenshots\\";
+    public static final String SCREENSHOT_EXTENSION=".png";
+
 }
